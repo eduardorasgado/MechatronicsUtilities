@@ -39,6 +39,11 @@ void binaryToDecimal(){
 	cout << "Tu binario sera tomado dato por dato de derecha a izquierda" << endl;
 	for(int i = (longitud-1);i >=0;i--) cout << "Inserte[" << i << "]: ",cin >> binario[i];
 	for(int i = (longitud-1);i >= 0 ;i--) cout << binario[i] << " "; cout << endl;
+
+	//algoritmo
+	int decimal = 0;
+	for(int i=0;i < longitud;i++) decimal += (binario[i]==1) ? pow(2,i) : 0;
+	cout << "EL numero decimal es: " << decimal << endl;
 }
 
 void hexaToBinary(){
