@@ -32,10 +32,13 @@ void decimalToBinary(){
 
 void binaryToDecimal(){
 	cout << "2" << endl;
-	int binario;
-	cout << "Por favor introduce tu numero binario" << endl;
-	cin >> binario;
-	cout << "Tu numero fue: " << binario;
+	int longitud;
+	cout << "Longitud de tu numero binario: " << endl;
+	cin >> longitud;
+	int binario[longitud];
+	cout << "Tu binario sera tomado dato por dato de derecha a izquierda" << endl;
+	for(int i = 0;i < longitud;i++) cout << "Inserte[" << i << "]: ",cin >> binario[i];
+	for(int &bin : binario) cout << bin << " "; cout << endl;
 }
 
 void hexaToBinary(){
