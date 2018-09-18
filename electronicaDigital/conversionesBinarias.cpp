@@ -103,7 +103,7 @@ void binaryToHexa(char HEXA[], int BINARY[16][4]){
 	for(int i = 0;i < newLength;i++) binarioCompletado[i] = (i < longitud) ? binario[i] : 0;
 	// El nuevo binario impreso
 	cout << "El nuevo binario es: " << endl;
-	for (int i = 0;i < newLength;i++) cout << binarioCompletado[i] << " "; cout << endl;
+	for (int i = (newLength - 1);i >=0;i--) cout << binarioCompletado[i] << " "; cout << endl;
 
 	cout << "extra: " << extra << ", Longitud del hexadecimal: " << lenHexa << endl;
 	// contador para conservar el numero del binario
