@@ -12,6 +12,7 @@ void requestBinary(int longitud, int binario[]){
         for(int i = (longitud-1);i >= 0 ;i--) cout << binario[i] << " "; cout << endl;
 }
 
+// FUNCTIONS
 void decimalToBinary(){
 	cout << "1" << endl;
 	double decimal;
@@ -83,7 +84,7 @@ void hexaToBinary(char HEXA[], int BINARY[16][4]){
 	for(int &bin : binario) cout << bin << " "; cout << endl;
 }
 
-void binaryToHexa(){
+void binaryToHexa(char HEXA[], int BINARY[16][4]){
 	int longitud;
         cout << "Longitud de tu numero binario: " << endl, cin >> longitud;
 	int binario[longitud];
@@ -91,12 +92,23 @@ void binaryToHexa(){
 	// for(int i = (longitud-1);i >= 0 ;i--) cout << binario[i] << " "; cout << endl;
 
 	// algoritmo
-	// si decimal es 1 0 1 1 0 entoces el arreglo queda: 0 1 1 0 1
+	// si el user introduce 1 0 1 1 0 entoces el arreglo interno queda: 0 1 1 0 1
 	int extra = ((longitud % 4) == 0) ? 0 : (longitud % 4);
 	int lenHexa = ((longitud%4) == 0) ? (longitud / 4) : ((longitud / 4) + 1);
 	char hexadecimal[lenHexa];
+
+	// creando un nuevo arreglo binario con los ceros en caso de necesitarlo
+	int newLength = (lenHexa * 4);
+	int binarioCompletado[newLength];
+	for(int i = 0;i < newLength;i++) binarioCompletado[i] = (i < longitud) ? binario[i] : 0;
+	// El nuevo binario impreso
+	cout << "El nuevo binario es: " << endl;
+	for (int i = 0;i < newLength;i++) cout << binarioCompletado[i] << " "; cout << endl;
+
 	cout << "extra: " << extra << ", Longitud del hexadecimal: " << lenHexa << endl;
-	// for(int i = 0; i < lenHexa;i++)
+	// contador para conservar el numero del binario
+	// int counter = 0;
+	// for(int i = 0; i < lenHexa;i++) for(int j = 0;j < 4;j++) ((i * 4) + j)
 }
 
 int main(){
@@ -131,7 +143,7 @@ int main(){
 			break;
 		case 4:
 			cout << "********CONVERSION BINARIO A HEXADECIMAL********" << endl;
-			binaryToHexa();
+			binaryToHexa(HEXA, BINARY);
 			break;
 	}
 	return 0;
