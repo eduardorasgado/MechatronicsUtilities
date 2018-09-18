@@ -48,9 +48,14 @@ void binaryToDecimal(){
 	cout << "El numero decimal es: " << decimal << endl;
 }
 
-void hexaToBinary(){
-	cout << "3" << endl;
-	 // char HEXA[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9','A', 'B', 'C', 'D', 'E', 'F'];
+void hexaToBinary(char HEXA[], int BINARY[16][4]){
+	//  char HEXA[] = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9','A', 'B', 'C', 'D', 'E', 'F'];
+	int lenHex;
+	cout << "Ingrese la longitud de su hexadecimal: ", cin >> lenHex;
+	char hexadecimal[lenHex];
+	cout << "Ingrese su hexadecimal de Izquierda a Derecha" << endl;
+	for(int i = 0;i < lenHex;i++) cout << "Hexadecimal[" << i <<"]: ", cin >> hexadecimal[i];
+	for(char &C : hexadecimal) cout << C << " "; cout << endl;
 }
 
 void binaryToHexa(){
@@ -59,7 +64,7 @@ void binaryToHexa(){
 
 int main(){
 	char HEXA[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9','A', 'B', 'C', 'D', 'E', 'F'};
-	int BINARY[][] = {{0,0,0,0}, {0,0,0,1}, {0,0,1,0},{0,0,1,1}, {0,1,0,0}, {0,1,0,1}, {0,1,1,0}, {0,1,1,1}, {1,0,0,0},
+	int BINARY[16][4] = {{0,0,0,0}, {0,0,0,1}, {0,0,1,0},{0,0,1,1}, {0,1,0,0}, {0,1,0,1}, {0,1,1,0}, {0,1,1,1}, {1,0,0,0},
 				{1,0,0,1},{1,0,1,0}, {1,0,1,1}, {1,1,0,0}, {1,1,0,1}, {1,1,1,0}, {1,1,1,1}};
 	int OCTAL[] = {0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17};
 
@@ -85,11 +90,11 @@ int main(){
 			break;
 		case 3:
 			cout << "********CONVERSION HEXADECIMAL A BINARIO********" << endl;
-			binaryToHexa();
+			hexaToBinary(HEXA, BINARY);
 			break;
 		case 4:
 			cout << "********CONVERSION BINARIO A HEXADECIMAL********" << endl;
-			hexaToBinary();
+			binaryToHexa();
 			break;
 	}
 	return 0;
