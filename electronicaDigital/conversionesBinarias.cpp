@@ -5,6 +5,13 @@
 
 using namespace std;
 
+// UTILITIES
+void requestBinary(int longitud, int binario[]){
+        cout << "Tu binario sera tomado dato por dato de derecha a izquierda" << endl;
+        for(int i = (longitud-1);i >=0;i--) cout << "Inserte[" << i << "]: ",cin >> binario[i];
+        for(int i = (longitud-1);i >= 0 ;i--) cout << binario[i] << " "; cout << endl;
+}
+
 void decimalToBinary(){
 	cout << "1" << endl;
 	double decimal;
@@ -33,15 +40,14 @@ void decimalToBinary(){
 }
 
 void binaryToDecimal(){
-	cout << "2" << endl;
 	int longitud;
 	cout << "Longitud de tu numero binario: " << endl;
 	cin >> longitud;
 	int binario[longitud];
-	cout << "Tu binario sera tomado dato por dato de derecha a izquierda" << endl;
-	for(int i = (longitud-1);i >=0;i--) cout << "Inserte[" << i << "]: ",cin >> binario[i];
-	for(int i = (longitud-1);i >= 0 ;i--) cout << binario[i] << " "; cout << endl;
-
+	//cout << "Tu binario sera tomado dato por dato de derecha a izquierda" << endl;
+	//for(int i = (longitud-1);i >=0;i--) cout << "Inserte[" << i << "]: ",cin >> binario[i];
+	//for(int i = (longitud-1);i >= 0 ;i--) cout << binario[i] << " "; cout << endl;
+	requestBinary(longitud, binario);
 	//algoritmo
 	int decimal = 0;
 	for(int i=0;i < longitud;i++) decimal += (binario[i]==1) ? pow(2,i) : 0;
@@ -78,7 +84,19 @@ void hexaToBinary(char HEXA[], int BINARY[16][4]){
 }
 
 void binaryToHexa(){
-	cout << "4" << endl;
+	int longitud;
+        cout << "Longitud de tu numero binario: " << endl, cin >> longitud;
+	int binario[longitud];
+	requestBinary(longitud, binario);
+	// for(int i = (longitud-1);i >= 0 ;i--) cout << binario[i] << " "; cout << endl;
+
+	// algoritmo
+	// si decimal es 1 0 1 1 0 entoces el arreglo queda: 0 1 1 0 1
+	int extra = ((longitud % 4) == 0) ? 0 : (longitud % 4);
+	int lenHexa = ((longitud%4) == 0) ? (longitud / 4) : ((longitud / 4) + 1);
+	char hexadecimal[lenHexa];
+	cout << "extra: " << extra << ", Longitud del hexadecimal: " << lenHexa << endl;
+	// for(int i = 0; i < lenHexa;i++)
 }
 
 int main(){
