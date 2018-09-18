@@ -56,6 +56,25 @@ void hexaToBinary(char HEXA[], int BINARY[16][4]){
 	cout << "Ingrese su hexadecimal de Izquierda a Derecha" << endl;
 	for(int i = 0;i < lenHex;i++) cout << "Hexadecimal[" << i <<"]: ", cin >> hexadecimal[i];
 	for(char &C : hexadecimal) cout << C << " "; cout << endl;
+	// Porque cade hexadecimal representa 4 binarios
+	int binLength = lenHex * 4;
+	int binario[binLength];
+	for(int i = 0;i < lenHex;i++){
+		int exactHex;
+                for(int k = 0;k < 16;k++){
+                	// Iterar en HEXA para encontrar el indice
+                        // que se usara en BINARY para asignarle a
+                        // binario
+                        exactHex = (HEXA[k] == hexadecimal[i]) ? k : exactHex;
+                 }
+		 for(int j = 0;j < 4;j++){
+			// iterando entre los miembros de BINARY[]
+			// y asignando de acuerdo a el hexadecimal correspondiente
+			 binario[((4*i)+j)] = BINARY[exactHex][j];
+		}
+	}
+	// imprimiendo el binario resultante
+	for(int &bin : binario) cout << bin << " "; cout << endl;
 }
 
 void binaryToHexa(){
