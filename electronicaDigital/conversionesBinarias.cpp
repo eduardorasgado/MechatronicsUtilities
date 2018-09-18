@@ -32,6 +32,10 @@ void decimalToBinary(){
 
 void binaryToDecimal(){
 	cout << "2" << endl;
+	int binario;
+	cout << "Por favor introduce tu numero binario" << endl;
+	cin >> binario;
+	cout << "Tu numero fue: " << binario;
 }
 
 void hexaToBinary(){
