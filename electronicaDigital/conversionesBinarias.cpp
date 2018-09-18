@@ -37,8 +37,8 @@ void binaryToDecimal(){
 	cin >> longitud;
 	int binario[longitud];
 	cout << "Tu binario sera tomado dato por dato de derecha a izquierda" << endl;
-	for(int i = 0;i < longitud;i++) cout << "Inserte[" << i << "]: ",cin >> binario[i];
-	for(int &bin : binario) cout << bin << " "; cout << endl;
+	for(int i = (longitud-1);i >=0;i--) cout << "Inserte[" << i << "]: ",cin >> binario[i];
+	for(int i = (longitud-1);i >= 0 ;i--) cout << binario[i] << " "; cout << endl;
 }
 
 void hexaToBinary(){
@@ -60,21 +60,22 @@ int main(){
 	cout << "4. Binario a Hexadecimal" << endl;
 	cin >> opcion;
 	cout << "Elegiste la opcion: " << opcion << endl;
+	cout << '\n';
 	switch(opcion){
 		case 1:
-			cout << "CONVERSION DECIMAL A BINARIO" << endl;
+			cout << "********CONVERSION DECIMAL A BINARIO********" << endl;
 			decimalToBinary();
 			break;
 		case 2:
-			cout << "CONVERSION BINARIO A DECIMAL" << endl;
+			cout << "********CONVERSION BINARIO A DECIMAL********" << endl;
 			binaryToDecimal();
 			break;
 		case 3:
-			cout << "CONVERSION HEXADECIMAL A BINARIO" << endl;
+			cout << "********CONVERSION HEXADECIMAL A BINARIO********" << endl;
 			binaryToHexa();
 			break;
 		case 4:
-			cout << "CONVERSION BINARIO A HEXADECIMAL" << endl;
+			cout << "********CONVERSION BINARIO A HEXADECIMAL********" << endl;
 			hexaToBinary();
 			break;
 	}
