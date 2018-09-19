@@ -209,8 +209,7 @@ void binaryToGray(){
 
 	// executando la compuerta XOR
 	cout << "Se aplica compueta XOR..." << endl;
-	for(int i = (newLength-1);i >= 0;i--)
-		gray[i] = (binarioCompletado[i]==1 ^ desfase[i]==1) ? 1 : 0;
+	for(int i = (newLength-1);i >= 0;i--) gray[i] = (binarioCompletado[i]==1 ^ desfase[i]==1) ? 1 : 0;
 
 	// imprimiendo el codigo gray
 	cout << "El codigo de gray es: " << endl;
