@@ -145,7 +145,44 @@ void octalToBinary(int BINARY_OCTAL[8][3]){
 }
 
 void binaryToOctal(int BINARY_OCTAL[8][3]){
-	cout << 6 << endl;
+	int longitud;
+        cout << "Longitud de tu numero binario: " << endl, cin >> longitud;
+        int binario[longitud];
+        requestBinary(longitud, binario);
+
+        // algoritmo
+        // si el user introduce 1 0 1 1 0 entoces el arreglo interno queda: 0 1 1 0 1
+        int extra = ((longitud % 3) == 0) ? 0 : (longitud % 3);
+        int lenOcta = ((longitud%3) == 0) ? (longitud / 3) : ((longitud / 3) + 1);
+        char octal[lenOcta];
+
+        // creando un nuevo arreglo binario con los ceros en caso de necesitarlo
+        int newLength = (lenOcta * 3);
+        int binarioCompletado[newLength];
+        for(int i = 0;i < newLength;i++) binarioCompletado[i] = (i < longitud) ? binario[i] : 0;
+        // El nuevo binario impreso
+        cout << "El nuevo binario es: " << endl;
+        for (int i = (newLength - 1);i >=0;i--) cout << binarioCompletado[i] << " "; cout << endl;
+
+        cout << "extra: " << extra << ", Longitud del Octal: " << lenOcta << endl;
+
+	/** buscamos los valores para OCTAL
+        for(int i = 0; i < lenHexa;i++){
+                for(int k = 0;k < 16;k++){
+                        int counterAp = 0;
+                        for(int j = 0;j < 4;j++){
+                                // comparando y si counterAp junta 4 el indice k es elegido
+                                // estamos iterando en reversa con el binarioCompletado 
+                                counterAp = ( binarioCompletado[((newLength-1) - ((i*4)+j))] == BINARY[k][j]) ? (c$
+                        }
+                        hexadecimal[i] = (counterAp == 4) ? HEXA[k] : hexadecimal[i];
+                }
+        }
+        // imprimimos los valores del hexadecimal
+        cout << "El valor hexadecimal es: " << endl;
+        for(char &C : hexadecimal) cout << C << " ";
+        cout << endl;
+	**/
 }
 
 int main(){
