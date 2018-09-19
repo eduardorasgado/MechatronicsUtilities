@@ -217,7 +217,20 @@ void binaryToGray(){
 }
 
 void grayToBinary(){
-	cout << 8 << endl;
+	int lenGray;
+        cout << "Ingrese la longitud de su código Gray: ", cin >> lenGray;
+        int gray[lenGray];
+        cout << "Ingrese su Gray de Izquierda a Derecha" << endl;
+        for(int i = 0;i < lenGray;i++) cout << "Gray[" << i <<"]: ", cin >> gray[i];
+        for(int &num : gray) cout << num << " "; cout << endl;
+
+	// algoritmo
+        int binario[lenGray];
+        // que representan su base binario dentro de BINARY_OCTAL
+        for(int i = 0;i < lenGray;i++) binario[i] = 0;
+        // imprimiendo el binario resultante
+	cout << "Su número binario es: " << endl;
+        for(int &bin : binario) cout << bin << " "; cout << endl;
 }
 
 int main(){
