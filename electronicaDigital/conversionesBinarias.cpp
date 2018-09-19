@@ -182,6 +182,14 @@ void binaryToOctal(int BINARY_OCTAL[8][3]){
         cout << endl;
 }
 
+void grayToBinary(){
+	cout << 7 << endl;
+}
+
+void binaryToGray(){
+	cout << 8 << endl;
+}
+
 int main(){
 	char HEXA[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9','A', 'B', 'C', 'D', 'E', 'F'};
 	int BINARY[16][4] = {{0,0,0,0}, {0,0,0,1}, {0,0,1,0},{0,0,1,1}, {0,1,0,0}, {0,1,0,1}, {0,1,1,0}, {0,1,1,1}, {1,0,0,0},
@@ -199,6 +207,8 @@ int main(){
 	cout << "4. Binario a Hexadecimal" << endl;
 	cout << "5. Octal a Binario" << endl;
 	cout << "6. Binario a Octal" << endl;
+	cout << "7. Código Gray a binario" << endl;
+	cout << "8. Código binario a código Gray\n" << endl;
 	cout << "Ingrese la conversion que desea realizar: " << endl;
 	cin >> opcion;
 	cout << '\n';
@@ -226,6 +236,14 @@ int main(){
 		case 6:
 			cout << "*******CONVERSION BINARIO A OCTAL**************" << endl;
 			binaryToOctal(BINARY_OCTAL);
+			break;
+		case 7:
+			cout << "*******CONVERSION GRAY A BINARIO**************" << endl;
+			grayToBinary();
+			break;
+		case 8:
+			cout << "*******CONVERSION BINARIO A GRAY**************" << endl;
+			binaryToGray();
 			break;
 	}
 	return 0;
