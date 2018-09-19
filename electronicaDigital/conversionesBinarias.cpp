@@ -113,7 +113,7 @@ void binaryToHexa(char HEXA[], int BINARY[16][4]){
 			for(int j = 0;j < 4;j++){
 				// comparando y si counterAp junta 4 el indice k es elegido
 				// estamos iterando en reversa con el binarioCompletado
-				if( binarioCompletado[(newLength - ((i*4)+j))] == BINARY[k][j]){
+				if( binarioCompletado[((newLength-1) - ((i*4)+j))] == BINARY[k][j]){
 					counterAp++;
 				}
 			}
