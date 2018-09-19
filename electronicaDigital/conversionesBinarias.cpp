@@ -125,7 +125,23 @@ void binaryToHexa(char HEXA[], int BINARY[16][4]){
 }
 
 void octalToBinary(int BINARY_OCTAL[8][3]){
-	cout << 5 << endl;
+	int lenOcta;
+        cout << "Ingrese la longitud de su Octal: ", cin >> lenOcta;
+        int octal[lenOcta];
+        cout << "Ingrese su octal de Izquierda a Derecha" << endl;
+        for(int i = 0;i < lenOcta;i++) cout << "Octal[" << i <<"]: ", cin >> octal[i];
+        for(int &num : octal) cout << num << " "; cout << endl;
+        // Porque cade octal representa 3 binarios
+        int binLength = lenOcta * 3;
+        int binario[binLength];
+	// iterando entre los miembros de BINARY_OCTAL[]
+        // y asignando de acuerdo al valor dentro de octal[i]
+        // 0 1 2 3 4 5 6 7 <- valores octales son subindices
+        // que representan su base binario dentro de BINARY_OCTAL
+        for(int i = 0;i < lenOcta;i++) for(int j = 0;j < 3;j++) binario[((3*i)+j)] = BINARY_OCTAL[octal[i]][j];
+
+        // imprimiendo el binario resultante
+        for(int &bin : binario) cout << bin << " "; cout << endl;
 }
 
 void binaryToOctal(int BINARY_OCTAL[8][3]){
@@ -137,7 +153,7 @@ int main(){
 	int BINARY[16][4] = {{0,0,0,0}, {0,0,0,1}, {0,0,1,0},{0,0,1,1}, {0,1,0,0}, {0,1,0,1}, {0,1,1,0}, {0,1,1,1}, {1,0,0,0},
 				{1,0,0,1},{1,0,1,0}, {1,0,1,1}, {1,1,0,0}, {1,1,0,1}, {1,1,1,0}, {1,1,1,1}};
 	// int OCTAL[] = {0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17};
-	int BINARY_OCTAL[8][3] = {{0,0,0}, {0,0,1}, {0,1,0}, {0,1,1}, {1,0,0}, {1,0,1}, {1,1,0}, {1,1,1}};
+	int BINARY_OCTAL[9][3] = {{0,0,0}, {0,0,1}, {0,1,0}, {0,1,1}, {1,0,0}, {1,0,1}, {1,1,0}, {1,1,1}};
 
 	// conversiones decimales, binarias, hexadecimales, octales
 	cout << "*****CONVERTIDOR DECIMAL, BINARIO, HEXADECIMAL, OCTAL********" << endl;
