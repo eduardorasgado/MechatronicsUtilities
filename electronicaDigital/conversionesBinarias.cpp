@@ -182,11 +182,34 @@ void binaryToOctal(int BINARY_OCTAL[8][3]){
         cout << endl;
 }
 
-void grayToBinary(){
-	cout << 7 << endl;
+void binaryToGray(){
+	int longitud;
+        cout << "Longitud de tu numero binario: " << endl, cin >> longitud;
+        int binario[longitud];
+        requestBinary(longitud, binario);
+
+	// algoritmo
+        // si el user introduce 1 0 1 1 0 entoces el arreglo interno queda: 0 1 1 0 1
+        int extra = ((longitud % 4) == 0) ? 0 : (longitud % 4);
+        int lenGray = ((longitud%4) == 0) ? (longitud / 4) : ((longitud / 4) + 1);
+
+        // creando un nuevo arreglo binario con los ceros en caso de necesitarlo
+        int newLength = (lenGray * 4);
+        int binarioCompletado[newLength];
+        for(int i = 0;i < newLength;i++) binarioCompletado[i] = (i < longitud) ? binario[i] : 0;
+        // El nuevo binario impreso
+        cout << "El nuevo binario es: " << endl;
+        for (int i = (newLength - 1);i >=0;i--) cout << binarioCompletado[i] << " "; cout << endl;
+
+	// algoritmo
+	int gray[newLength];
+	for(int i = (newLength-1);i >= 0;i--) gray[i] = (i != (newLength-1)) ? 1 : 0;
+	// imprimiendo el codigo gray
+	cout << "El codigo de gray es: " << endl;
+	for (int i = (newLength-1);i >=0;i--) cout << gray[i] << " "; cout << endl;
 }
 
-void binaryToGray(){
+void grayToBinary(){
 	cout << 8 << endl;
 }
 
@@ -238,12 +261,12 @@ int main(){
 			binaryToOctal(BINARY_OCTAL);
 			break;
 		case 7:
-			cout << "*******CONVERSION GRAY A BINARIO**************" << endl;
-			grayToBinary();
-			break;
-		case 8:
 			cout << "*******CONVERSION BINARIO A GRAY**************" << endl;
 			binaryToGray();
+			break;
+		case 8:
+			cout << "*******CONVERSION GRAY A BINARIO**************" << endl;
+			grayToBinary();
 			break;
 	}
 	return 0;
