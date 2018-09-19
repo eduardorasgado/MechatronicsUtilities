@@ -124,22 +124,33 @@ void binaryToHexa(char HEXA[], int BINARY[16][4]){
 	cout << endl;
 }
 
+void octalToBinary(int BINARY_OCTAL[8][3]){
+	cout << 5 << endl;
+}
+
+void binaryToOctal(int BINARY_OCTAL[8][3]){
+	cout << 6 << endl;
+}
+
 int main(){
 	char HEXA[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9','A', 'B', 'C', 'D', 'E', 'F'};
 	int BINARY[16][4] = {{0,0,0,0}, {0,0,0,1}, {0,0,1,0},{0,0,1,1}, {0,1,0,0}, {0,1,0,1}, {0,1,1,0}, {0,1,1,1}, {1,0,0,0},
 				{1,0,0,1},{1,0,1,0}, {1,0,1,1}, {1,1,0,0}, {1,1,0,1}, {1,1,1,0}, {1,1,1,1}};
-	int OCTAL[] = {0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17};
+	// int OCTAL[] = {0, 1, 2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15, 16, 17};
+	int BINARY_OCTAL[8][3] = {{0,0,0}, {0,0,1}, {0,1,0}, {0,1,1}, {1,0,0}, {1,0,1}, {1,1,0}, {1,1,1}};
 
 	// conversiones decimales, binarias, hexadecimales, octales
 	cout << "*****CONVERTIDOR DECIMAL, BINARIO, HEXADECIMAL, OCTAL********" << endl;
 	int opcion;
-	cout << "Ingrese la conversion que desea realizar: " << endl;
+
 	cout << "1. Decimal a binario" << endl;
 	cout << "2. Binario a decimal" << endl;
 	cout << "3. Hexadecimal a binario" << endl;
 	cout << "4. Binario a Hexadecimal" << endl;
+	cout << "5. Octal a Binario" << endl;
+	cout << "6. Binario a Octal" << endl;
+	cout << "Ingrese la conversion que desea realizar: " << endl;
 	cin >> opcion;
-	cout << "Elegiste la opcion: " << opcion << endl;
 	cout << '\n';
 	switch(opcion){
 		case 1:
@@ -157,6 +168,14 @@ int main(){
 		case 4:
 			cout << "********CONVERSION BINARIO A HEXADECIMAL********" << endl;
 			binaryToHexa(HEXA, BINARY);
+			break;
+		case 5:
+			cout << "********CONVERSION OCTAL A BINARIO*************" << endl;
+			octalToBinary(BINARY_OCTAL);
+			break;
+		case 6:
+			cout << "*******CONVERSION BINARIO A OCTAL**************" << endl;
+			binaryToOctal(BINARY_OCTAL);
 			break;
 	}
 	return 0;
