@@ -106,9 +106,26 @@ void binaryToHexa(char HEXA[], int BINARY[16][4]){
 	for (int i = (newLength - 1);i >=0;i--) cout << binarioCompletado[i] << " "; cout << endl;
 
 	cout << "extra: " << extra << ", Longitud del hexadecimal: " << lenHexa << endl;
-	// contador para conservar el numero del binario
-	// int counter = 0;
-	// for(int i = 0; i < lenHexa;i++) for(int j = 0;j < 4;j++) ((i * 4) + j)
+	// buscamos los valores para hexadecimal
+	for(int i = 0; i < lenHexa;i++){
+		for(int k = 0;k < 16;k++){
+			int counterAp = 0;
+			for(int j = 0;j < 4;j++){
+				// comparando y si counterAp junta 4 el indice k es elegido
+				// estamos iterando en reversa con el binarioCompletado
+				if( binarioCompletado[(newLength - ((i*4)+j))] == BINARY[k][j]){
+					counterAp++;
+				}
+			}
+			if(counterAp == 4){
+				hexadecimal[i] = HEXA[k];
+			}
+		}
+	}
+	// imprimimos los valores del hexadecimal
+	cout << "El valor hexadecimal es: " << endl;
+	for(char &C : hexadecimal) cout << C << " ";
+	cout << endl;
 }
 
 int main(){
