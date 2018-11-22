@@ -7,18 +7,20 @@ Algorithm can be find here:
 def main_function(x, y):
     return (3.0 * y)-(2 * (x*x))
 
-def sumation1(interval, y, a, h):
+# y is c or d 
+def sumation1(m, y, a, h):
     i = 1
     result = 0.0
-    while i != interval-1:
+    while i != m-1:
         result += main_function(Xi(a, i, h), y)
         i +=1
     return result 
 
-def sumation2(interval, x, c, k):
+# x is a or b 
+def sumation2(n, x, c, k):
     i = 1
     result = 0.0
-    while i != interval-1:
+    while i != n-1:
         result += main_function(x, Yj(c, i, k))
         i+=1
     return result
@@ -44,6 +46,7 @@ def double_integral_trapezoidal(a, b, c, d, n, m):
     k = (d - c) / float(n) # for x
     
     first_component = (1 / 4.0)*h * k
+
     second_component = main_function(a, c) + main_function(b, c)
     second_component += main_function(a, d) + main_function(b, d)
 
