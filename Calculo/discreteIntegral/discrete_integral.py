@@ -1,4 +1,6 @@
-#!/etc/bin/python
+#!/usr/bin/env python
+# -*- coding_ utf-8 -*-
+
 ## we want to apply a discrete integral
 """
 Based on the Trapezoid method to integrate defined functions:

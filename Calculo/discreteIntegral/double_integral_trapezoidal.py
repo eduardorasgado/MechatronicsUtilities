@@ -1,4 +1,5 @@
-#!/usr/bin/python
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 """
 Algorithm can be find here:
     http://mathfaculty.fullerton.edu/mathews/n2003/SimpsonsRule2DMod.html
