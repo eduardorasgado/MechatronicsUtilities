@@ -9,7 +9,7 @@ import numpy as np
 # detencion
 Ts = [1.5, 2.0, 0.75]
 
-# tiempo total
+# tiempo total0
 SigmaT = 0
 for i in range(len(Ts)):
 	SigmaT += Ts[i]
@@ -52,8 +52,8 @@ DeltaR1 =  (H1*SigmaTi) / Ts[0]
 ### segundo intervalo -> descenso cicloidal#############
 
 H2 = 50 #mm
-DeltaR2 = H2 * (1-(SigmaTi/Ts[1])+((1/(2*np.pi))*
-		np.sin((2*np.pi*SigmaTi)/Ts[1])) ) + 50
+DeltaR2 = (H2 * (1-(SigmaTi/Ts[1])+((1/(2*np.pi))*
+		np.sin((2*np.pi*SigmaTi)/Ts[1])) )) + 50
 
 ########################################################
 
